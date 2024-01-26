@@ -1,0 +1,53 @@
+﻿@model IEnumerable<QuanLiSV.Models.Diemhoctap>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinhvien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monhoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diemthi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diemquatrinh)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinhvien.gioitinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monhoc.tenmh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diemthi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diemquatrinh)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.masv">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.masv">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.masv">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
