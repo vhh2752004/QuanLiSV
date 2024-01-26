@@ -1,0 +1,46 @@
+﻿@model QuanLiSV.Models.Ketquahoctap
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ketquahoctap</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Sinhvien_Id" class="control-label"></label>
+                <select asp-for="Sinhvien_Id" class ="form-control" asp-items="ViewBag.Sinhvien_Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Monhoc_Id" class="control-label"></label>
+                <select asp-for="Monhoc_Id" class ="form-control" asp-items="ViewBag.Monhoc_Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hocky" class="control-label"></label>
+                <input asp-for="Hocky" class="form-control" />
+                <span asp-validation-for="Hocky" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diemtongket" class="control-label"></label>
+                <input asp-for="Diemtongket" class="form-control" />
+                <span asp-validation-for="Diemtongket" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

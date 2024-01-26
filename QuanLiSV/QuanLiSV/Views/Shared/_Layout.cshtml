@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - QuanLiSV</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #1c0c76;
+            text-align: center;
+            padding: 10px;
+        }
+
+            header h1 {
+                background-color: #1c0c76;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+            }
+
+            header a {
+                background-color: #d4d1d1;
+                width: 5px;
+                height: 5px;
+                padding: 3px;
+                text-align: center;
+            }
+
+
+
+        nav {
+         
+            background-color: #d4d1d1;
+            padding: 50px;
+            text-align: center;
+        }
+
+            nav a {
+                text-decoration: none;
+                color: #051358;
+                padding: 20px 20px;
+                margin: 0 5px;
+                border-radius: 0px;
+                background-color: #74baef;
+            }
+
+                nav a:hover {
+                    background-color: #fff;
+                }
+
+        footer {
+            background-color: #1c0c76;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Thông Tin Sinh Viên - Đại học Nguyễn Tất Thành</h1>
+
+        <a  asp-area="" asp-controller="Users" asp-action="Login">Đăng nhập</a>
+
+    </header>
+
+
+
+    <nav>
+        <a asp-controller="Sinhviens" asp-action="Index">Thông Tin Sinh Viên</a>
+        <a asp-area="" asp-controller="Lops" asp-action="Index">Thông Tin Lớp</a>
+        <a asp-area="" asp-controller="Monhocs" asp-action="Index">Danh Mục Môn Học</a>
+        <a asp-area="" asp-controller="Diemhoctaps" asp-action="Index">Bảng Điểm Học Tập</a>
+        <a asp-area="" asp-controller="Ketquahoctaps" asp-action="Index">Kết Quả Học Tập</a>
+        <a asp-area="" asp-controller="Lichhocs" asp-action="Index">Lịch Học</a>
+        <a asp-area="" asp-controller="Diemrenluyens" asp-action="Index">Điểm Rèn Luyện</a>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Đại học Nguyễn Tất Thành</p>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

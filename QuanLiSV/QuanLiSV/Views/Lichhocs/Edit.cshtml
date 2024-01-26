@@ -1,0 +1,54 @@
+﻿@model QuanLiSV.Models.Lichhoc
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Lichhoc</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="mamonhoc" />
+            <div class="form-group">
+                <label asp-for="thuhoc" class="control-label"></label>
+                <input asp-for="thuhoc" class="form-control" />
+                <span asp-validation-for="thuhoc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="giobatdau" class="control-label"></label>
+                <input asp-for="giobatdau" class="form-control" />
+                <span asp-validation-for="giobatdau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gioketthuc" class="control-label"></label>
+                <input asp-for="gioketthuc" class="form-control" />
+                <span asp-validation-for="gioketthuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phonghoc" class="control-label"></label>
+                <input asp-for="phonghoc" class="form-control" />
+                <span asp-validation-for="phonghoc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Monhoc_ID" class="control-label"></label>
+                <select asp-for="Monhoc_ID" class="form-control" asp-items="ViewBag.Monhoc_ID"></select>
+                <span asp-validation-for="Monhoc_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

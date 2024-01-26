@@ -1,0 +1,59 @@
+﻿@model IEnumerable<QuanLiSV.Models.Lichhoc>
+
+@{
+    ViewData["Title"] = "Lịch Học sinh viên";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Tạo Mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.thuhoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.giobatdau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gioketthuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phonghoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monhoc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.thuhoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.giobatdau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gioketthuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phonghoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monhoc.tenmh)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.mamonhoc">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.mamonhoc">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.mamonhoc">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

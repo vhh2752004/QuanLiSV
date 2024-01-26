@@ -1,0 +1,44 @@
+﻿@model QuanLiSV.Models.Diemrenluyen
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Diemrenluyen</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="masv" />
+            <div class="form-group">
+                <label asp-for="Sinhvien_Id" class="control-label"></label>
+                <select asp-for="Sinhvien_Id" class="form-control" asp-items="ViewBag.Sinhvien_Id"></select>
+                <span asp-validation-for="Sinhvien_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hoten" class="control-label"></label>
+                <input asp-for="Hoten" class="form-control" />
+                <span asp-validation-for="Hoten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="diemrenluyen" class="control-label"></label>
+                <input asp-for="diemrenluyen" class="form-control" />
+                <span asp-validation-for="diemrenluyen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
