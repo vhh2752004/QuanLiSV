@@ -1,0 +1,30 @@
+﻿@model QuanLiSV.Models.Monhoc
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Monhoc</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tenmh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tenmh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sotinchi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sotinchi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.mamonhoc">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

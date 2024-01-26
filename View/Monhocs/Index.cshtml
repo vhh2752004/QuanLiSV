@@ -1,0 +1,41 @@
+﻿@model IEnumerable<QuanLiSV.Models.Monhoc>
+
+@{
+    ViewData["Title"] = "Danh sách môn học";
+}
+
+<h1>Danh sách môn học</h1>
+
+<p>
+    <a asp-action="Create">Tạo Mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tenmh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sotinchi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenmh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sotinchi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.mamonhoc">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.mamonhoc">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.mamonhoc">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
